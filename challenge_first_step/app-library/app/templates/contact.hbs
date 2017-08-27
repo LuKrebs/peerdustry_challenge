@@ -1,1 +1,22 @@
-<h1>Contact Page</h1>
+<div class="container text-center">
+  <h1>Feel free to message us! </h1>
+
+  <br/><br/>
+
+  <div class="form-horizontal form-group form-group-lg row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+      {{input type="email" value=emailAddress class="form-control" placeholder="Please type your e-mail address." autofocus="autofocus"}}
+    </div>
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+      {{textarea class="form-control" placeholder="Your message. (At least 5 characters.)" rows="7" value=message}}
+    </div>
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <button class="btn btn-primary btn-lg btn-block" disabled={{isButtonDisabled}} {{action 'saveInvitation'}}>Send message</button>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+   {{#if responseMessage}}
+     <div class="alert alert-success">{{responseMessage}}</div>
+   {{/if}}
+   </div>
+</div>

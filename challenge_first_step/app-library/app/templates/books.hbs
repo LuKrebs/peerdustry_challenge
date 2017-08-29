@@ -1,0 +1,19 @@
+<h2>Books</h2>
+
+
+{{#each model as |book|}}
+  <div class="col-md-4">
+    <div class="panel panel-default library-item">
+        <div class="panel-heading">
+            <h3 class="panel-title">{{book.title}}</h3>
+        </div>
+        <div class="panel-body">
+            Author: {{book.author.name}},
+            Release year: {{book.releaseYear}}
+        </div>
+        <div class="panel-footer text-right">
+            Library available: {{book.library.name}}
+        </div>
+    </div>
+  </div>
+{{/each}}

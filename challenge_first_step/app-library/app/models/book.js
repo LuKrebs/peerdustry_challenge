@@ -3,7 +3,7 @@ import Faker from 'faker';
 
 export default DS.Model.extend({
   title: DS.attr('string'),
-  releaseYear: DS.attr('date'),
+  releaseYear: DS.attr('string'),
 
   author: DS.belongsTo('author', {inverse: 'books', async: true}),
   library: DS.belongsTo('library', {inverse: 'books', async: true}),
@@ -22,7 +22,8 @@ export default DS.Model.extend({
   },
 
   _randomYear() {
-    return new Date(this._getRandomArbitrary(1900, 2015).toPrecision(4));
+    var date = new Date(this._getRandomArbitrary(1900, 2015).toPrecision(4));
+    return date.getFullYear();
   },
 
   _getRandomArbitrary(min, max) {

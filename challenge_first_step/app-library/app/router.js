@@ -22,6 +22,7 @@ Router.map(function() {
   });
   this.route('authors');
   this.route('books');
+  this.route('sign-up');
 });
 
 export default Router;

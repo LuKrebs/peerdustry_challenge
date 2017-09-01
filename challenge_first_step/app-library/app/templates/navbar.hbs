@@ -29,6 +29,9 @@
             {{#nav-link-to 'admin.invitations'}}Invitations{{/nav-link-to}}
             {{#nav-link-to 'admin.contacts'}}Contacts{{/nav-link-to}}
             {{#nav-link-to 'admin.seeder'}}Seeder{{/nav-link-to}}
+            {{#if session.isAuthenticated}}
+              <button {{action "signOut"}} class='btn btn-xs btn-danger'>Sign out</button>
+            {{/if}}
           </ul>
         </li>
       </ul>
